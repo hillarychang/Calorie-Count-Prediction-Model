@@ -69,18 +69,18 @@ To fit our model, we performed transformations on the new features introduced to
 
 
 
-## Fairness Analysis\
+## Fairness Analysis
 We want to see whether our final model demonstrates a difference in performance between recipes with n_step less than or equal to 10 and recipes with n_step greater than 10. We will explore this question with a permutation test, shuffling the n_step groupings to assess the model's accuracy.
 
 Our two groups are recipes that have `n_step` less than or equal to 10 and recipes with `n_step` greater than 10. This is because 10 is the mean n_step in the recipes dataset.
 
-**Null Hypothesis**:\ 
+**Null Hypothesis**:
 Our model is fair. Its accuracy among recipes with n_step less than or equal to 10 is roughly the same as its accuracy among recipes with n_step greater than 10
 
-**Alternative Hypothesis**:\ 
+**Alternative Hypothesis**:
 Our model is not fair. Its accuracy among recipes with n_step less than or equal to 10 is different from its accuracy among recipes with n_step greater than 10.
 
-**Test Statistic**:\ 
+**Test Statistic**:
 We will use the absolute difference in accuracy as our test statistic. This involves calculating the absolute difference between the accuracy for recipes with n_step less than or equal to 10 and the accuracy for recipes with n_step greater than 10.
 
 
