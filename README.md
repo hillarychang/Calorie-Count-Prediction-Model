@@ -85,6 +85,10 @@ N_estimators = 100
 | RMSE              | 39.92424849043112            |
 | R^2               | 0.9954077018865699            |
 
+By introducing new features to our model, our ability to predict `calories` greatly improved. The new R^2 value is very close to 1, indicating that almost 100% of the variations in the predictions made by the model are due the features fit by the model. The RMSE of the model also greatly decreased compared to the RMSE found in our baseline model.
+
+Based on the increased R^2 value and the decreased RMSE value, our final model is significantly better at predicting `calories` accurately. 
+
 
 ## Fairness Analysis
 We want to see whether our final model demonstrates a difference in performance between recipes with n_step less than or equal to 10 and recipes with n_step greater than 10. We will explore this question with a permutation test, shuffling the n_step groupings to assess the model's accuracy.
