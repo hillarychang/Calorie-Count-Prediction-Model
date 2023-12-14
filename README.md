@@ -8,7 +8,8 @@ In an era where mindful eating and wellness are in the spotlight, there's a grow
 
 Our prediction problem for the Recipes and Ratings data set is predicting total calories based on the features of the data set, such as the number of ingredients per recipe ```n_ingredients``` and how the recipe is rated on a scale from 1 to 5 ```rating```. To model our prediction, we will be training a regression model. 
 
-**Response Variable**: Our response variable will be an engineered column titled ```calories``` that we created during the exploratory data analysis process of this project. We believe that the ability to predict ```calories``` can be extremely useful for the food and health industry in a variety of different ways, such as in the development of new recipes and in the understanding of how different types of ingredients affect the overall caloric count of a recipe. This would not only allow manufacturers to maximize the nutritional value and quality of their products, but would also shift the industry towards a more health-conscious standard that would benefit consumers.
+**Response Variable**: 
+Our response variable will be an engineered column titled ```calories``` that we created during the exploratory data analysis process of this project. We believe that the ability to predict ```calories``` can be extremely useful for the food and health industry in a variety of different ways, such as in the development of new recipes and in the understanding of how different types of ingredients affect the overall caloric count of a recipe. This would not only allow manufacturers to maximize the nutritional value and quality of their products, but would also shift the industry towards a more health-conscious standard that would benefit consumers.
 
 **Evaluation Metrics**:
 We will be using the root mean square error (RMSE) in tandem with the coefficient of determination (R^2) as metrics to evaluate our regression model. 
@@ -17,7 +18,8 @@ RMSE, by definition, shows us the average error between our predictions from the
 
 R^2, on the other hand, represents the proportion of the variance for our dependent variable ```calories``` that is predictable from the independent variables ```n_ingredients```, ```n_steps```, etc]. This is an essential metric for our model, as it provides an intuitive measure of how much of the variation in our predictions can be explained by our model. For example, a high R^2 indicates that our model can explain a large proportion of the variability in the `calories`, which is what we are training the model to do, while a low R^2 indicates the opposite, which is what we do NOT want to do. By using R^2, we can understand how closes our predictions align with the features in out model and swap out specific features depending on its value. 
 
-**Information Known**: At the time of prediction, our data set will have all of its original columns from the merged data ```name```, ```minutes```, ```review```, etc. as well as columns that we engineered during the exploratory data analysis process from Project 3 ```avg_rating```, ```total_fat```, ```protein```, etc. 
+**Information Known**: 
+At the time of prediction, our data set will have all of its original columns from the merged data ```name```, ```minutes```, ```review```, etc. as well as columns that we engineered during the exploratory data analysis process from Project 3 ```avg_rating```, ```total_fat```, ```protein```, etc. 
 
 
 ## Base Model
@@ -39,10 +41,10 @@ Our model achieved a RMSE of 345.72485986758636 and a R^2 of 0.6556359621651207.
 
 
 ## Final Model
-**Introduction**
+**Introduction**:
 For our final model, we decided to stick with the RandomForestRegressor, as we believe that it is flexible for adding new features as well as good at preventing overfitting of features due to the majority voting process when deciding predictions.
 
-**Added Features**
+**Added Features**:
 `carbs` - The carbohydrate count of a recipe often correlates with a higher calorie count, as seen in dishes like pasta and bread. 
 `sodium` - The inclusion of excess sodium is often correlated with highly-processed foods or foods with higher calorie counts, such as instant noodles and preserved meat.
 `protein` - The presence of protein in a dish is somewhat correlated with the calorie count of that dish. The use of dairy products in a dish usually contributes to higher calorie counts than dishes without dairy. 
