@@ -58,7 +58,7 @@ content of the recipe.
 
 `minutes` - The number of minutes per recipe could be correlated to the total calories of the recipe. Longer cooking times are often linked to more complex dishes than shorter cooking times, which could result in higher calorie counts for recipes that take a longer time to prepare.
 
-We used the nutritional information, such as total fat (```total_fat```), sugar (```sugar```), 'carbs' (```carbs```), 'sodium' (```sodium```), 'protein' (```protein```), 'saturated_fat' (```saturated_fat```), the number of steps (```n_steps```), and the number of minutes (```minutes```) in our recipe dataset.
+We used the nutritional information, such as total fat (```total_fat```), sugar (```sugar```), carbs (```carbs```), sodium (```sodium```), protein (```protein```), saturated_fat (```saturated_fat```), the number of steps (```n_steps```), and the number of minutes (```minutes```) in our recipe dataset.
 
 To fit our model, we performed transformations on the new features introduced to the model. We used StdScaler() to standardize `carbs`, `sodium`, `protein`, `saturated_fat`, `n_steps`. For the `minutes` feature, we used QuantileTransformer to transform the values. In doing these steps, we are able to better fit the model, as it balances the weights of each feature relative to one another.
 
