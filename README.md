@@ -35,3 +35,5 @@ Our model achieved a RMSE of 345.72485986758636 and a R^2 of 0.6556359621651207.
 
 ## Final Model
 such as the nutritional information, such as total fat (```total_fat```), sugar (```sugar```), 'carbs' (```carbs```), 'sodium' (```sodium```), 'protein' (```protein```), 'saturated_fat' (```saturated_fat```), the number of steps (```n_steps```), and the number of minutes (```minutes```) in a comprehensive recipe dataset.
+
+## Fairness Analysis
