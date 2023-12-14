@@ -102,11 +102,7 @@ Our model is fair. Its accuracy among recipes with n_step less than or equal to 
 Our model is not fair. Its accuracy among recipes with n_step less than or equal to 10 is different from its accuracy among recipes with n_step greater than 10.
 
 **Test Statistic**:
-In our test statistics, we examine the difference in root mean square errors (RMSE) between recipes in Group X (recipes with `n_step` less than or equal to 10) and Group Y (recipes with `n_step` greater than 10). Our chosen significance threshold is 0.05. The observed statistic represents the actual difference in RMSE between Group X and Group Y. To assess our hypothesis, we conduct a permutation test by shuffling the `n_step` column and utilizing our pre-trained model to predict the corresponding calories. Subsequently, we calculate the RMSE differences for the two groups and repeat this process 500 times. The resulting p-value from these 500 simulations is nearly 0. Consequently, we reject the null hypothesis, indicating that the performance of our model in predicting calories for recipes in Group X significantly differs from that in Group Y. This suggests that the model's predictive fairness is compromised concerning recipes with different `n_step` values.
+In our test statistics, we examine the difference in root mean square errors (RMSE) between recipes in Group X (recipes with `n_step` less than or equal to 10) and Group Y (recipes with `n_step` greater than 10). 
 
-
-
-
-We will use the absolute difference in accuracy as our test statistic. This involves calculating the absolute difference between the accuracy for recipes with n_step less than or equal to 10 and the accuracy for recipes with n_step greater than 10.
-
+Our chosen significance threshold is 0.01. The observed statistic represents the actual difference in RMSE between Group X and Group Y. To assess our hypothesis, we conduct a permutation test by shuffling the `n_step` column and utilizing our pre-trained model to predict the corresponding calories. Subsequently, we calculate the RMSE differences for the two groups and repeat this process 250 times. The resulting p-value from these 250 simulations is nearly 0. Consequently, we reject the null hypothesis, indicating that the performance of our model in predicting calories for recipes in Group X significantly differs from that in Group Y. This suggests that the model's predictive fairness is compromised concerning recipes with different `n_step` values. This suggests that our model is not fair, and that it is stastically biased towards the recipes with n_step less than or equal to 10, but this does not signify absolute conclusion.
 
