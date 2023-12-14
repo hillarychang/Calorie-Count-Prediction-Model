@@ -17,19 +17,17 @@ RMSE, by definition, shows us the average error between our predictions from the
 
 R^2, on the other hand, represents the proportion of the variance for our dependent variable ```calories``` that is predictable from the independent variables ```n_ingredients```, ```n_steps```, etc]. This is an essential metric for our model, as it provides an intuitive measure of how much of the variation in our predictions can be explained by our model. For example, a high R^2 indicates that our model can explain a large proportion of the variability in the `calories`, which is what we are training the model to do, while a low R^2 indicates the opposite, which is what we do NOT want to do. By using R^2, we can understand how closes our predictions align with the features in out model and swap out specific features depending on its value. 
 
-At the time of prediction, our data set will have all of its original columns from the merged data ```name```, ```minutes```, ```review```, etc. as well as columns that we engineered during the exploratory data analysis process from Project 3 ```avg_rating```, ```total_fat```, ```protein```, etc. 
-
-**Information Known**: At the time of prediction, we would know (columns to train on).
+**Information Known**: At the time of prediction, our data set will have all of its original columns from the merged data ```name```, ```minutes```, ```review```, etc. as well as columns that we engineered during the exploratory data analysis process from Project 3 ```avg_rating```, ```total_fat```, ```protein```, etc. 
 
 
 ## Base Model
-INTRODUCTION
+**Introduction**:
 The model that we will be using to solve our prediction problem will be the RandomForestRegressor. It will be trained on the`total_fat` and `sugar` features of the data set. Both of these features are quantitative.
 
-DATA ENCODING
+**Data Encoding**:
 For the `total_fat` feature, we applied Binarizer() with the threshold at 31.9, which is the mean of all the `total_fat` column. For the `sugar` feature, we applied StdScaler() to standardize the `sugar` for all recipes. 
 
-MODEL DESCRIPTION AND PERFORMANCE
+**Model Description and Performance**:
 We decided to use the RandomForestRegressor as our model of choice for this regression problem with default values on the parameters of the model.
 
 Our model achieved a RMSE of ____ and a R^2 of 0.6556359621651207. 
