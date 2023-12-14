@@ -78,7 +78,12 @@ param_grid = {
 
 After the GridSearch, our optimal hyperparameters are:
 max_depth = None
-N_estimators = 50
+N_estimators = 100
+
+| Metric            | Test Score                    |
+| ------------------| ------------------------------|
+| RMSE              | 39.92424849043112            |
+| R^2               | 0.9954077018865699            |
 
 
 ## Fairness Analysis
