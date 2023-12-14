@@ -30,8 +30,7 @@ For the `total_fat` feature, we applied Binarizer() with the threshold at 31.9, 
 **Model Description and Performance**:
 We decided to use the RandomForestRegressor as our model of choice for this regression problem with default values on the parameters of the model.
 
-Our model achieved a RMSE of ____ and a R^2 of 0.6556359621651207. 
-
+Our model achieved a RMSE of 345.72485986758636 and a R^2 of 0.6556359621651207. Based on the RMSE alone, the model is very unreliable in predicting `calories` from our features, as the mean for the `calories` column is 419.52887014831776, which is relatively close to the RMSE we are achieving. Additionally, the R^2 implies that only 65.56% of the variability in the predicted `calories` can be explained by the `total_fat` and `sugar`. For our model to be considered “good,” we need to reduce the RMSE significantly and raise our R^2 to at least 90%.
 
 
 ## Final Model
