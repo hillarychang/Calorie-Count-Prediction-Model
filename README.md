@@ -44,13 +44,21 @@ Our model achieved a RMSE of 345.72485986758636 and a R^2 of 0.6556359621651207.
 **Introduction**:
 For our final model, we decided to stick with the RandomForestRegressor, as we believe that it is flexible for adding new features as well as good at preventing overfitting of features due to the majority voting process when deciding predictions.
 
-**Added Features**:
+**Added Features**: 
 `carbs` - The carbohydrate count of a recipe often correlates with a higher calorie count, as seen in dishes like pasta and bread. 
+
 `sodium` - The inclusion of excess sodium is often correlated with highly-processed foods or foods with higher calorie counts, such as instant noodles and preserved meat.
+
 `protein` - The presence of protein in a dish is somewhat correlated with the calorie count of that dish. The use of dairy products in a dish usually contributes to higher calorie counts than dishes without dairy. 
+
 `saturated_fat` - Saturated fat is a large contributor to the caloric content of a recipe. 
-`n_steps` - The number of steps in a recipe could have an impact on the complexity of the dish and therefore on the caloric content of the recipe. 
+
+`n_steps` - The number of steps in a recipe could have an impact on the complexity of the dish and therefore on the caloric 
+content of the recipe. 
+
 `minutes` - The number of minutes per recipe could be correlated to the total calories of the recipe. Longer cooking times are often linked to more complex dishes than shorter cooking times, which could result in higher calorie counts for recipes that take a longer time to prepare.
+
+We used the nutritional information, such as total fat (```total_fat```), sugar (```sugar```), 'carbs' (```carbs```), 'sodium' (```sodium```), 'protein' (```protein```), 'saturated_fat' (```saturated_fat```), the number of steps (```n_steps```), and the number of minutes (```minutes```) in our recipe dataset.
 
 To fit our model, we performed transformations on the new features introduced to the model. We used StdScaler() to standardize `carbs`, `sodium`, `protein`, `saturated_fat`, `n_steps`. For the `minutes` feature, we used QuantileTransformer to transform the values. In doing these steps, we are able to better fit the model, as it balances the weights of each feature relative to one another.
 
@@ -59,7 +67,6 @@ To fit our model, we performed transformations on the new features introduced to
 | RMSE              | 47.97538413056438            |
 | R^2               | 0.9933687791149496           |
 
-such as the nutritional information, such as total fat (```total_fat```), sugar (```sugar```), 'carbs' (```carbs```), 'sodium' (```sodium```), 'protein' (```protein```), 'saturated_fat' (```saturated_fat```), the number of steps (```n_steps```), and the number of minutes (```minutes```) in a comprehensive recipe dataset.
 
 
 ## Fairness Analysis
@@ -67,10 +74,13 @@ We want to see whether our final model demonstrates a difference in performance 
 
 Our two groups are recipes that have `n_step` less than or equal to 10 and recipes with `n_step` greater than 10. This is because 10 is the mean n_step in the recipes dataset.
 
-**Null Hypothesis**: Our model is fair. Its accuracy among recipes with n_step less than or equal to 10 is roughly the same as its accuracy among recipes with n_step greater than 10
+**Null Hypothesis**: 
+Our model is fair. Its accuracy among recipes with n_step less than or equal to 10 is roughly the same as its accuracy among recipes with n_step greater than 10
 
-**Alternative Hypothesis**: Our model is not fair. Its accuracy among recipes with n_step less than or equal to 10 is different from its accuracy among recipes with n_step greater than 10.
+**Alternative Hypothesis**: 
+Our model is not fair. Its accuracy among recipes with n_step less than or equal to 10 is different from its accuracy among recipes with n_step greater than 10.
 
-**Test Statistic**: We will use the absolute difference in accuracy as our test statistic. This involves calculating the absolute difference between the accuracy for recipes with n_step less than or equal to 10 and the accuracy for recipes with n_step greater than 10.
+**Test Statistic**: 
+We will use the absolute difference in accuracy as our test statistic. This involves calculating the absolute difference between the accuracy for recipes with n_step less than or equal to 10 and the accuracy for recipes with n_step greater than 10.
 
 
