@@ -44,7 +44,7 @@ Our model achieved a RMSE of 345.72485986758636 and a R^2 of 0.6556359621651207.
 **Introduction**:\
 For our final model, we decided to stick with the RandomForestRegressor, as we believe that it is flexible for adding new features as well as good at preventing overfitting of features due to the majority voting process when deciding predictions.
 
-**Added Features**:
+**Added Features**:\
 `carbs` - The carbohydrate count of a recipe often correlates with a higher calorie count, as seen in dishes like pasta and bread. 
 
 `sodium` - The inclusion of excess sodium is often correlated with highly-processed foods or foods with higher calorie counts, such as instant noodles and preserved meat.
