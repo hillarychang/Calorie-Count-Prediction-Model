@@ -62,6 +62,12 @@ We used the nutritional information, such as total fat (```total_fat```), sugar 
 
 To fit our model, we performed transformations on the new features introduced to the model. We used StdScaler() to standardize `carbs`, `sodium`, `protein`, `saturated_fat`, `n_steps`. For the `minutes` feature, we used QuantileTransformer to transform the values. In doing these steps, we are able to better fit the model, as it balances the weights of each feature relative to one another.
 
+| Metric            | Test Score                    |
+| ------------------| ------------------------------|
+| RMSE              | 47.97538413056438            |
+| R^2               | 0.9933687791149496           |
+
+
 **Hyperparameters**:\
 For the RandomForestRegressor, there are two hyperparameters that we are interested in: `max_depth` and `n_estimators`. These two hyperparameters are imperative for optimizing each training tree for a more accurate prediction in the end. To find these optimal hyperparameters we performed a GridSearchCV with a cv value of 3 and our parameter grid listed below:
 
@@ -73,11 +79,6 @@ param_grid = {
 After the GridSearch, our optimal hyperparameters are:
 max_depth = None
 N_estimators = 50
-
-| Metric            | Test Score                    |
-| ------------------| ------------------------------|
-| RMSE              | 47.97538413056438            |
-| R^2               | 0.9933687791149496           |
 
 
 ## Fairness Analysis
