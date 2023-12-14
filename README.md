@@ -3,7 +3,7 @@ by Hillary Chang (hic001@ucsd.edu) and Paige Pagaduan (ppagaduan@ucsd.edu)
 ## Overview
 Our exploratory data analysis on this dataset can be found [here](https://hillarychang.github.io/Association-between-Protein-and-Calorie-Count/).
 
-## Framing the Problem\
+## Framing the Problem
 In an era where mindful eating and wellness are in the spotlight, there's a growing emphasis on understanding the nutritional content of our meals. The calorie count of a recipe isn't just a number—it has evolved into a crucial piece of information, guiding individuals to make informed decisions about their dietary choices. For athletes, health enthusiasts, and even individuals living a normal lifestyle, having awareness of protein count and calorie content in recipes is essential for weight management, reaching fitness objectives, and fostering mindful decision-making. 
 
 Our prediction problem for the Recipes and Ratings data set is predicting total calories based on the features of the data set, such as the number of ingredients per recipe ```n_ingredients``` and how the recipe is rated on a scale from 1 to 5 ```rating```. To model our prediction, we will be training a regression model. 
@@ -23,13 +23,13 @@ At the time of prediction, our data set will have all of its original columns fr
 
 
 ## Base Model
-**Introduction**:
+**Introduction**:\
 The model that we will be using to solve our prediction problem will be the RandomForestRegressor. It will be trained on the`total_fat` and `sugar` features of the data set. Both of these features are quantitative.
 
-**Data Encoding**:
+**Data Encoding**:\
 For the `total_fat` feature, we applied Binarizer() with the threshold at 31.9, which is the mean of all the `total_fat` column. For the `sugar` feature, we applied StdScaler() to standardize the `sugar` for all recipes. 
 
-**Model Description and Performance**:
+**Model Description and Performance**:\
 We decided to use the RandomForestRegressor as our model of choice for this regression problem with default values on the parameters of the model.
 
 Our model achieved a RMSE of 345.72485986758636 and a R^2 of 0.6556359621651207. Based on the RMSE alone, the model is very unreliable in predicting `calories` from our features, as the mean for the `calories` column is 419.52887014831776, which is relatively close to the RMSE we are achieving. Additionally, the R^2 implies that only 65.56% of the variability in the predicted `calories` can be explained by the `total_fat` and `sugar`. For our model to be considered “good,” we need to reduce the RMSE significantly and raise our R^2 to at least 90%.
@@ -41,10 +41,10 @@ Our model achieved a RMSE of 345.72485986758636 and a R^2 of 0.6556359621651207.
 
 
 ## Final Model
-**Introduction**:
+**Introduction**:\
 For our final model, we decided to stick with the RandomForestRegressor, as we believe that it is flexible for adding new features as well as good at preventing overfitting of features due to the majority voting process when deciding predictions.
 
-**Added Features**: 
+**Added Features**:\ 
 `carbs` - The carbohydrate count of a recipe often correlates with a higher calorie count, as seen in dishes like pasta and bread. 
 
 `sodium` - The inclusion of excess sodium is often correlated with highly-processed foods or foods with higher calorie counts, such as instant noodles and preserved meat.
@@ -69,18 +69,18 @@ To fit our model, we performed transformations on the new features introduced to
 
 
 
-## Fairness Analysis
+## Fairness Analysis\
 We want to see whether our final model demonstrates a difference in performance between recipes with n_step less than or equal to 10 and recipes with n_step greater than 10. We will explore this question with a permutation test, shuffling the n_step groupings to assess the model's accuracy.
 
 Our two groups are recipes that have `n_step` less than or equal to 10 and recipes with `n_step` greater than 10. This is because 10 is the mean n_step in the recipes dataset.
 
-**Null Hypothesis**: 
+**Null Hypothesis**:\ 
 Our model is fair. Its accuracy among recipes with n_step less than or equal to 10 is roughly the same as its accuracy among recipes with n_step greater than 10
 
-**Alternative Hypothesis**: 
+**Alternative Hypothesis**:\ 
 Our model is not fair. Its accuracy among recipes with n_step less than or equal to 10 is different from its accuracy among recipes with n_step greater than 10.
 
-**Test Statistic**: 
+**Test Statistic**:\ 
 We will use the absolute difference in accuracy as our test statistic. This involves calculating the absolute difference between the accuracy for recipes with n_step less than or equal to 10 and the accuracy for recipes with n_step greater than 10.
 
 
