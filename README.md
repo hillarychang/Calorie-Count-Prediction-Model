@@ -32,9 +32,20 @@ We decided to use the RandomForestRegressor as our model of choice for this regr
 
 Our model achieved a RMSE of 345.72485986758636 and a R^2 of 0.6556359621651207. Based on the RMSE alone, the model is very unreliable in predicting `calories` from our features, as the mean for the `calories` column is 419.52887014831776, which is relatively close to the RMSE we are achieving. Additionally, the R^2 implies that only 65.56% of the variability in the predicted `calories` can be explained by the `total_fat` and `sugar`. For our model to be considered “good,” we need to reduce the RMSE significantly and raise our R^2 to at least 90%.
 
+| Metric            | Test Score                    |
+| ------------------| ------------------------------|
+| RMSE              | 345.72485986758636           |
+| R^2               | 0.6556359621651207           |
+
 
 ## Final Model
 such as the nutritional information, such as total fat (```total_fat```), sugar (```sugar```), 'carbs' (```carbs```), 'sodium' (```sodium```), 'protein' (```protein```), 'saturated_fat' (```saturated_fat```), the number of steps (```n_steps```), and the number of minutes (```minutes```) in a comprehensive recipe dataset.
+
+| Metric            | Test Score                    |
+| ------------------| ------------------------------|
+| RMSE              | 47.97538413056438            |
+| R^2               | 0.9933687791149496           |
+
 
 ## Fairness Analysis
 We want to see whether our final model demonstrates a difference in performance between recipes with n_step less than or equal to 10 and recipes with n_step greater than 10. We will explore this question with a permutation test, shuffling the n_step groupings to assess the model's accuracy.
