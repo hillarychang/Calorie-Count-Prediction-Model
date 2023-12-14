@@ -18,7 +18,7 @@ RMSE, by definition, shows us the average error between our predictions from the
 
 R^2, on the other hand, represents the proportion of the variance for our dependent variable ```calories``` that is predictable from the independent variables ```n_ingredients```, ```n_steps```, ```total_fat```, ```sugar```, ```carbs```, ```sodium```, ```protein```, ```saturated_fat```, ```minutes```. This is an essential metric for our model, as it provides an intuitive measure of how much of the variation in our predictions can be explained by our model. For example, a high R^2 indicates that our model can explain a large proportion of the variability in the `calories`, which is what we are training the model to do, while a low R^2 indicates the opposite, which is what we do NOT want to do. By using R^2, we can understand how closes our predictions align with the features in out model and swap out specific features depending on its value. 
 
-**Information Known**:
+**Information Known**:\
 At the time of prediction, our data set will have all of its original columns from the merged data ```name```, ```minutes```, ```review```, etc. as well as columns that we engineered during the exploratory data analysis process from our exploratory data analysis in Project 3 ```avg_rating```, ```total_fat```, ```protein```, ```total_fat```, ```sugar```, ```carbs```, ```sodium```, ```saturated_fat```. 
 
 
