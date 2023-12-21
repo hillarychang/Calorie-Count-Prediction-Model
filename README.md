@@ -1,4 +1,4 @@
-by Hillary Chang (hic001@ucsd.edu) and Paige Pagaduan (ppagaduan@ucsd.edu)
+by Hillary Chang (hic001@ucsd.edu) 
 
 ## Overview
 Our exploratory data analysis on this dataset can be found [here](https://hillarychang.github.io/Association-between-Protein-and-Calorie-Count/).
